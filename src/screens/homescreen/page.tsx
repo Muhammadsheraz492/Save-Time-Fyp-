@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero_Secction from './hero_secction/page'
+import Hero_Secction from './hero_section/page'
 
 export default function HomeScreen() {
     return (
