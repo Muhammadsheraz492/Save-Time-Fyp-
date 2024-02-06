@@ -45,6 +45,7 @@ body {
  margin-left: auto;
  margin-right: auto;
  }
+
  @media screen and (max-width:1560px){
   .wrapper { 
  
@@ -84,4 +85,7 @@ body {
    /* margin-left: auto; */
    /* margin-right: auto; */
    }
+ }
+ .search{
+  background-color: white;
  }

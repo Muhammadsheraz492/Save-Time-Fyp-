@@ -1,5 +1,6 @@
 import HomeScreen from '@/screens/homescreen/page'
 import Navbar from '@/screens/navbar/page'
+import Search_Bar from '@/screens/search_section/page'
 import React from 'react'
 
 export default function page() {
@@ -10,6 +11,16 @@ export default function page() {
         <Navbar />
         <HomeScreen />
       </div>
+      <div className='search'>
+
+        <div className="wrapper">
+
+          <Search_Bar />
+        </div>
+      </div>
+
+
+
     </div>
   )
 }

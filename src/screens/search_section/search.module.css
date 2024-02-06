@@ -1,0 +1,11 @@
+.search_container {
+    /* flex: 1; */
+    background-color: white;
+}
+
+.wrapper {
+    /* background-color: white; */
+    max-width: 1536px;
+    padding-left: auto;
+    padding-right: auto;
+}
