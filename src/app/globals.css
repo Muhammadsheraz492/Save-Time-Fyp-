@@ -21,7 +21,9 @@ body {
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
+      background-color: white;
+
+    }
 
 @layer utilities {
   .text-balance {
@@ -96,4 +98,25 @@ body {
   /* justify-items: center; */
   background-color: white;
 
+
+}
+.slick-slide{
+  background-color: white;
+
+}
+.slick-slide >div{
+  margin: 0 10px;
+  background-color: white;
+
+  /* background-color: black; */
+}
+.slick-prev:before,
+.slick-next:before {
+  /* background-color: white; */
+  color: red!important;
+  /* border-radius: 20px; */
+  /* padding: 15px; */
+  /* height: 20px; */
+  /* align-items: center; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); */
 }

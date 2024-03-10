@@ -71,3 +71,7 @@
     object-fit:contain;
     /* border-radius: 15px;   */
 }
+.button__bar li.slick-active button {
+    opacity: .75;
+    color: #000
+}
