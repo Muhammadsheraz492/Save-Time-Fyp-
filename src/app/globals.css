@@ -18,12 +18,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -31,61 +28,72 @@ body {
     text-wrap: balance;
   }
 }
-.main_container{
+
+.main_container {
   min-height: 100vh;
   /* display: flex;
   flex-direction: column ;
   align-items: center;
   justify-content: center; */
-  background-color:#F3F7FA;
+  background-color: #F3F7FA;
+  /* background-color: #F3F7FA; */
 }
-.wrapper { 
- 
-  max-width: 1536px; 
- margin-left: auto;
- margin-right: auto;
- }
 
- @media screen and (max-width:1560px){
-  .wrapper { 
- 
-    max-width: 1336px; 
-   /* margin-left: auto; */
-   /* margin-right: auto; */
-   }
- }
- @media screen and (max-width:1280px){
-  .wrapper { 
- 
-    max-width: 1024px; 
-   /* margin-left: auto; */
-   /* margin-right: auto; */
-   }
- }
- @media screen and (max-width:1024px){
-  .wrapper { 
- 
-    max-width: 768px; 
-   margin-left: auto; 
-   margin-right: auto;
-   }
- }
- @media screen and (max-width:768px){
-  .wrapper { 
- 
-    max-width: 640px; 
-   /* margin-left: auto; */
-   /* margin-right: auto; */
-   }
- }
- @media screen and (max-width:640px){
-  .wrapper { 
- 
-    max-width: 475px; 
-   /* margin-left: auto; */
-   /* margin-right: auto; */
-   }
- }
- .search{
+.wrapper {
+
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width:1560px) {
+  .wrapper {
+
+    max-width: 1336px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+  }
+}
+
+@media screen and (max-width:1280px) {
+  .wrapper {
+
+    max-width: 1024px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .wrapper {
+
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .wrapper {
+
+    max-width: 640px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+  }
+}
+
+@media screen and (max-width:640px) {
+  .wrapper {
+
+    max-width: 475px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+  }
+}
+
+.search {
+  display: flex;
+  /* justify-items: center; */
   background-color: white;
- }
+
+}

@@ -1,6 +1,7 @@
 import HomeScreen from '@/screens/homescreen/page'
 import Navbar from '@/screens/navbar/page'
-import Search_Bar from '@/screens/search_section/page'
+import Popular from '@/screens/popular/page'
+import Search from '@/screens/search/page'
 import React from 'react'
 
 export default function page() {
@@ -12,13 +13,15 @@ export default function page() {
         <HomeScreen />
       </div>
       <div className='search'>
-
         <div className="wrapper">
-
-          <Search_Bar />
+          <Search />
         </div>
       </div>
-
+      <div className='search'>
+        <div className="wrapper">
+          <Popular />
+        </div>
+      </div>
 
 
     </div>
