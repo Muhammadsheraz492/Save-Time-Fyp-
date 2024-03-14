@@ -1,3 +1,4 @@
+import Top_talent from '@/screens/Talents/top_talent'
 import HomeScreen from '@/screens/homescreen/page'
 import Navbar from '@/screens/navbar/page'
 import Popular from '@/screens/popular/page'
@@ -20,6 +21,7 @@ export default function page() {
       <div className='search'>
         <div className="wrapper">
           <Popular />
+          <Top_talent />
         </div>
       </div>
 

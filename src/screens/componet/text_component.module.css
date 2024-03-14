@@ -1,0 +1,34 @@
+
+.Popular{
+    /* width: fit-content; */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    margin-top: 10;
+}
+
+.popularContent {
+    width:100pc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    color: #000;
+  }
+  .tagline, .viewAll{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  .tagline span{
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .viewAll span{
+    font-size: 24px;
+    color: #00A79D;
+    cursor: pointer ;
+  }
+ 
