@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './text_component.module.css'
 import Image from 'next/image'
-const Text_component:React.FC<{title:any}>=({title})=> {
+const Text_component:React.FC<{title:any,button:Boolean}>=({title,button})=> {
   return (
     <div className={style.Popular}>
     <div className={style.popularContent}>
@@ -9,10 +9,12 @@ const Text_component:React.FC<{title:any}>=({title})=> {
         <span>{title}</span>
         {/* <Image src={"/trafiic.svg"} alt="Traffic Icon" width={30} height={30} /> */}
       </div>
-      <div className={style.viewAll}>
+      {button&&(
+        <div className={style.viewAll}>
         <span>View All</span>
         <Image src={"/viewAll.svg"} alt="View All Icon" width={30} height={30} />
       </div>
+      )}
     </div>
   </div>
   )

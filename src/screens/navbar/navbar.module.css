@@ -1,5 +1,10 @@
 .container {
+    /* position: fixed;
+    width: 95%;
+    z-index: 999;
+    top:0; */
     display: flex;
+    /* background-color: #fff; */
     align-items: center;
     justify-content: space-between;
     height: 100px;
