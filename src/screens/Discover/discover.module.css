@@ -1,0 +1,99 @@
+.main_container {
+    width: 100%;
+    padding: 10px 40px;
+    /* background: linear-gradient(180deg, rgba(0, 167, 157, 0.12) 0%, rgba(0, 65, 61, 0.12) 100%); */
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    /* justify-content:space-between; */
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content {
+
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* gap: 40px; */
+}
+
+.tagline {
+    color: #252525;
+    text-align: left;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    text-transform: capitalize;
+}
+.content_card{
+    width: 400px;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.title{
+    display: flex;
+    align-items:flex-start;
+    gap: 5px;
+}
+.content_title{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+.title span{
+    color: #000;
+    text-align: left;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Lexend;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    text-transform: capitalize;
+
+
+}
+
+.des {
+    color: #000;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Lexend;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+}
+.img_container{
+    width: 600px;
+    /* padding: 0px 10px; */
+    /* padding-right: 50px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.img_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

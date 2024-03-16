@@ -1,12 +1,13 @@
 import React from 'react'
 import style from './text_component.module.css'
 import Image from 'next/image'
-const Text_component:React.FC<{title:any,button:Boolean}>=({title,button})=> {
+const Text_component:React.FC<{title:any,button:Boolean,second:string}>=({title,button,second})=> {
   return (
     <div className={style.Popular}>
     <div className={style.popularContent}>
       <div className={style.tagline}>
-        <span>{title}</span>
+      <span>{title}</span>
+      {second&&(<span style={{color:"#00A79D"}}>{second}</span>)}
         {/* <Image src={"/trafiic.svg"} alt="Traffic Icon" width={30} height={30} /> */}
       </div>
       {button&&(

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import style from './catgory.module.css'
 import Text_component from '../componet/text_component'
 import Category_card from '../componet/category_card'
+import Image from 'next/image'
 function Catgory() {
     let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const [showMore, setShowMore] = useState(false);
@@ -13,13 +14,25 @@ function Catgory() {
     return (
         <div className={style.main_Container}>
             <Text_component title={"Here are Something You’d Need"} button={!showMore} onClick={() => setShowMore(true)} />
-            <div className={style.category} style={{ height: 270 }}>
+            <div className={style.category}>
                 {displayedData.map((e) => (
                     <Category_card key={e} />
                 ))}
             </div>
-            <div>
+            <div className={style.more}
+            
+            onClick={()=>{
+                setShowMore(!showMore )
+            }}
+            >
                 <span>More Categories</span>
+                <Image  
+                src={"/more.svg"}
+                alt='more'
+                width={15}
+                height={15}
+                
+                />
             </div>
         </div>
     );

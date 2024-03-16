@@ -39,14 +39,17 @@ body {
   align-items: center;
   justify-content: center; */
   background-color: #F3F7FA;
+  /* background: linear-gradient(180deg, rgba(0, 167, 157, 0.12) 0%, rgba(0, 65, 61, 0.12) 100%); */
+  
   /* background-color: #F3F7FA; */
 }
 
-.wrapper {
+.wrapper  {
 
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 @media screen and (max-width:1560px) {
@@ -101,6 +104,10 @@ body {
 
 
 }
+.search2{
+  background: linear-gradient(180deg, rgba(0, 167, 157, 0.12) 0%, rgba(0, 65, 61, 0.12) 100%);
+
+}
 .slick-slide{
   background-color: white;
 
@@ -121,3 +128,4 @@ body {
   /* align-items: center; */
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); */
 }
+/*  */
