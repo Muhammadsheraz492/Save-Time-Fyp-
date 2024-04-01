@@ -11,11 +11,29 @@ export default function Popular() {
 
   var settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 2,
-
+    autoplay: true,
+    autoplaySpeed: 1000, 
+    responsive: [
+      {
+        breakpoint: 1024, // Adjust the breakpoint as needed
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 754, // Adjust the breakpoint as needed
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+      // Add more breakpoints and settings as needed
+    ]
   };
   
 

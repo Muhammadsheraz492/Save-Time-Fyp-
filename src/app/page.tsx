@@ -1,6 +1,7 @@
 import DisCover from '@/screens/Discover/page'
 import Top_talent from '@/screens/Talents/top_talent'
 import Catgory from '@/screens/category/catgory'
+import Some_Doubts from '@/screens/doubts/page'
 import HomeScreen from '@/screens/homescreen/page'
 import Navbar from '@/screens/navbar/page'
 import Popular from '@/screens/popular/page'
@@ -38,6 +39,11 @@ export default function page() {
       <div className='search'>
         <div className="wrapper">
           <Trending_Seller />
+        </div>
+      </div>
+      <div className='search3'>
+        <div className="wrapper">
+          <Some_Doubts />
         </div>
       </div>
     </div>

@@ -15,18 +15,37 @@ function Top_talent() {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 2,
+        responsive: [
+            {
+              breakpoint: 1024, // Adjust the breakpoint as needed
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 754, // Adjust the breakpoint as needed
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              }
+            }
+            // Add more breakpoints and settings as needed
+          ]
     };
     
     return (
         <div>
             <Text_component title={"Top Rated Talents"} button={true} />
             <Slider {...settings}>
-                {data.map((e) => (
-                    <div style={{ filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))' }}>
+                {data.map((e) => (    
+                    <div
+                    key={e}
+                    style={{ filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))' }}>
                         <Gig_card />
                     </div>
                 ))}
-            </Slider>
+            </Slider> 
         </div>
     );
 }

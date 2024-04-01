@@ -1,18 +1,32 @@
 import React from 'react'
 import style from './hero.module.css'
 import Image from 'next/image'
+import Typography from '@mui/material/Typography';
+
 export default function Hero_Section() {
   return (
     <div className={style.hero_section}>
       <div className={style.text_conatiner}>
-        <div  className={style.status}>
+        <div className={style.status}>
           <text className={style.status_text}>FOR HIRING</text>
           <label className={style.switch}>
             <input type='checkbox' />
             <span className={style.switch_round}></span>
 
           </label>
-          <text className={style.status_text}>FOR FREELANCING</text>
+          <Typography sx={{
+            fontSize: {
+              xs: "16px",
+              md: "18px",
+              lg: "20px",
+
+            },
+            color: {
+              xs: "#131517",
+              md: "#131517",
+              lg: "#131517"
+            }
+          }}>FOR FREELANCING</Typography>
         </div>
         <text className={style.tagline}>Freelance Jobs <br /> and Talents at <br /> Your FingerTips</text>
         <text className={style.des}>Connect with Top Freelancers and <br /> Clients on Our Platform! Find your<br /> perfect match for your next project.</text>
