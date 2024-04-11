@@ -1,0 +1,48 @@
+.main_container {
+    padding: 15px;
+    background-color: white;
+}
+
+.main_service_container {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    /* background-color: cyan; */
+}
+
+.services {
+    width: 90%;
+    height: 63px;
+    background-color: cadetblue;
+    margin: 0 auto;
+    /* This will center the element horizontally */
+    display: flex;
+    /* justify-content: center;  */
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+
+.services a {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+    /* 150% */
+}
+
+.gigs {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space; */
+    align-items: flex-start;
+  
+
+}
+.gigs > * {
+    margin: 15px; /* Adjust the margin value as needed */
+  }

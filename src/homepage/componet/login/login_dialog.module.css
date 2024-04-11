@@ -1,0 +1,25 @@
+
+.searchInput {
+    padding:10px;;
+    border: none;
+    font-size: 16px;
+    outline: none;  
+    color: #000;
+    
+}
+.fade-in {
+    opacity: 0;
+    animation: fadeIn ease-in 50.3s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px); /* Start from above */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Arrive at normal position */
+    }
+  }
+  

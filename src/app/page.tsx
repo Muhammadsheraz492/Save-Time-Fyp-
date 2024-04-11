@@ -1,12 +1,13 @@
-import DisCover from '@/screens/Discover/page'
-import Top_talent from '@/screens/Talents/top_talent'
-import Catgory from '@/screens/category/catgory'
-import Some_Doubts from '@/screens/doubts/page'
-import HomeScreen from '@/screens/homescreen/page'
-import Navbar from '@/screens/navbar/page'
-import Popular from '@/screens/popular/page'
-import Search from '@/screens/search/page'
-import Trending_Seller from '@/screens/trending/page'
+import DisCover from '@/homepage/Discover/page'
+import Footer from '@/homepage/Footer/page'
+import Top_talent from '@/homepage/Talents/top_talent'
+import Catgory from '@/homepage/category/catgory'
+import Some_Doubts from '@/homepage/doubts/page'
+import HomeScreen from '@/homepage/homescreen/page'
+import Navbar from '@/homepage/navbar/page'
+import Popular from '@/homepage/popular/page'
+import Search from '@/homepage/search/page'
+import Trending_Seller from '@/homepage/trending/page'
 import React from 'react'
 
 export default function page() {
@@ -14,7 +15,7 @@ export default function page() {
     <div className="main_container">
 
       <div className="wrapper">
-        <Navbar />
+        <Navbar show={false} />
         <HomeScreen />
       </div>
       <div className='search'>
@@ -46,7 +47,11 @@ export default function page() {
           <Some_Doubts />
         </div>
       </div>
+      <div className='footer'>
+        <div className="wrapper">
+          <Footer  />
+        </div>
+      </div>
     </div>
   )
 }
-``
