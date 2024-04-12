@@ -32,7 +32,7 @@ function Login_dialog({onpress}:Dialog_props) {
                     <br />
                     <span className={"text-blue-gray-700 font-inter text-base font-normal leading-6 tracking-normal "}>Sign In with the email address you use at work.</span>
                     <br />
-                    <div className="flex flex-col justify-center items-start gap-0.5 p-0.5  h-68 min-h-48 flex-shrink-0 border rounded-lg" style={{ width: "39%", padding: "10px" }}>
+                    <div className="flex flex-col justify-center items-start gap-0.5 p-0.5   flex-shrink-0 border rounded-lg" style={{ width: "39%", padding: "10px",height:'68px' }}>
                         {/* Your content */}
                         <span className="font-inter text-xs font-normal leading-4"
                             style={{ color: "#677084" }}
@@ -48,7 +48,7 @@ function Login_dialog({onpress}:Dialog_props) {
                         />
                     </div>
                     <br />
-                    <div className="flex flex-col justify-center items-start gap-0.5 p-0.5  h-68 min-h-48 flex-shrink-0 border rounded-lg" style={{ width: "39%", padding: "10px" }}>
+                    <div className="flex flex-col justify-center items-start gap-0.5 p-0.5  h-68 min-h-68 flex-shrink-0 border rounded-lg" style={{ width: "39%", padding: "10px" ,height:'68px'}}>
                         {/* Your content */}
                         <span className="font-inter text-xs font-normal leading-4" style={{ color: "#677084;" }}>
                             Password</span>
