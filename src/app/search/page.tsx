@@ -14,15 +14,22 @@ function Force_buying_nav() {
   const [showlogin, setshowlogin] = useState(false)
   const [click_login, Setclick_login] = useState(false)
   useEffect(() => {
-    setTimeout(() => {
-      // alert("Hello")
-      setshowlogin(true)
-    }, 1000);
+    // setTimeout(() => {
+    //   // alert("Hello")
+    //   if(!showlogin){
+    //     setshowlogin(true)
+
+    //   }
+    // }, 1000);
+    // setInterval(()=>{
+    //     setshowlogin(true)
+
+    // },3000)
   }, [])
   return (
     <div className={style.main_container}>
-      <Navbar show={true} onpress_login={()=>{
-        Setclick_login(true )
+      <Navbar show={true} onpress_login={() => {
+        setshowlogin(true)
       }} />
       <div style={{ height: 20 }} />
 
@@ -35,14 +42,27 @@ function Force_buying_nav() {
       {showlogin && (
         <Dialog onpress={() => {
           setshowlogin(false)
-        }} />
+        }}
+          login_onpress={() => {
+            setshowlogin(false)
+            Setclick_login(true)
+          }}
+
+        />
       )
 
       }
-      {click_login&&(
-        <Login_dialog onpress={()=>{
-          Setclick_login(false )
-        }}/>
+      {click_login && (
+        <Login_dialog onpress={() => {
+          Setclick_login(false)
+        }}
+          back_press={() => {
+            Setclick_login(false)
+            setshowlogin(true)
+
+          }}
+
+        />
       )
 
       }

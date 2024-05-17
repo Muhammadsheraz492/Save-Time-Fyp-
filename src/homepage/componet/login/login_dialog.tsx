@@ -5,9 +5,10 @@ import { FaTimes } from 'react-icons/fa';
 import Image from 'next/image';
 import { FaArrowLeftLong } from "react-icons/fa6";
 interface Dialog_props{
-    onpress:any
+    onpress:any,
+    back_press:any
 }
-function Login_dialog({onpress}:Dialog_props) {
+function Login_dialog({onpress,back_press}:Dialog_props) {
     
     return (
         <dialog
@@ -23,7 +24,11 @@ function Login_dialog({onpress}:Dialog_props) {
                     <FaTimes className="text-blue-gray-600" size={26} />
                 </div>
                 <div className="h-full flex flex-col  justify-items-center justify-center">
-                    <div>
+                    <div
+                    onClick={back_press}
+                    style={{cursor:"pointer"}}
+                    
+                    >
                         <FaArrowLeftLong className="text-blue-gray-600" size={26} color='#666666' />
 
                     </div>
