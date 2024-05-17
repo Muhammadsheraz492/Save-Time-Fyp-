@@ -1,0 +1,140 @@
+.main_container {
+    padding: 15px;
+}
+
+.service {
+    width: 90%;
+    height: 1vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Category_Container {
+    display: flex;
+    gap: 10px;
+    color: #00A79D;
+}
+
+.Category_Container span {
+    color: "#00A79D";
+}
+
+.title {
+    color: #404145;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36.4px;
+}
+
+.userdetails {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.usericon {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+}
+.usericon img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: black;
+}
+.username{
+color: #404145;
+font-family: Inter;
+font-size: 18                         px;
+font-style: normal;
+font-weight: 700;
+line-height: 21px; /* 161.538% */
+}
+.userlevel{
+    color: #62646A;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 21px; /* 150% */
+}
+.divider{
+    color: #C5C6C9;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 21px; /* 150% */
+}
+.total_orders {
+    color: #62646A;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.Queues {
+    color: #95979D;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.gig_images{
+    display: flex;
+    gap: 20px;
+}
+.Images_preview{
+display: flex;
+flex-direction: column;
+    gap:20px;
+}
+.img_preview{
+    width: 100px;
+    height: 60px;
+    flex-shrink: 0;
+}
+.img_preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: black;
+    /* opacity: 0.3; */
+    
+}
+.larg_images{
+
+}
+.large_preview{
+    width: 712px;
+height: 458px;
+flex-shrink: 0;
+}
+.large_preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: black;
+    /* opacity: 0.3; */
+}
+.slider-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none; /* Ensure only buttons are clickable */
+}
