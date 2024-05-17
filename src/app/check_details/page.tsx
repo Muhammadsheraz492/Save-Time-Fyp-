@@ -8,18 +8,34 @@ import StarRating from '@/homepage/componet/Starts/page'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 export default function page() {
     const [domLoaded, setdomLoaded] = useState(false)
     const Category_Array = ["Video & Animation", "App & Website Previews"]
     const Gig_images = ["https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/448837/original/20fd768872785df8a3a5f932f84167ad1a9f4d3e/do-keyword-research-for-your-niche-or-business.png", "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/448837/original/99a27d78676c7b0e221b9e7c326826e411b11eda/do-keyword-research-for-your-niche-or-business.jpg"]
+    const [currentIndex, setCurrentIndex] = useState(1);
+
+
+    const goToNext = () => {
+ 
+
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % Gig_images.length);
+    };
+
+    const goToPrevious = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + Gig_images.length) % Gig_images.length);
+    };
+    const Custom_index=(index:number)=>{
+        setCurrentIndex(index)
+
+    }
     useEffect(() => {
         setdomLoaded(true)
     }, [])
     return (
-        <>
+        <div>
             {domLoaded && (
-                <>
+                <div className={style.main_container}>
                     <After_login_NavBar />
                     <All_services />
                     <div className={style.service}>
@@ -62,7 +78,9 @@ export default function page() {
                             <div className={style.gig_images}>
                                 <div className={style.Images_preview}>
                                     {Gig_images.map((e, i) => (
-                                        <div className={style.img_preview}>
+                                        <div 
+                                        onClick={()=>Custom_index(i)}
+                                        className={style.img_preview}>
 
                                             < img
 
@@ -78,16 +96,17 @@ export default function page() {
 
                                         < img
 
-                                            src={"https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/448837/original/20fd768872785df8a3a5f932f84167ad1a9f4d3e/do-keyword-research-for-your-niche-or-business.png"}
+                                            src={Gig_images[currentIndex]}
                                         />
-                                        {/* <FontAwesomeIcon icon={faArrowLeft} size="2x" /> */}
-                                        <div className="slider-controls">
-                                            <button onClick={() => { }} className="slider-button left">
-                                                <FontAwesomeIcon icon={faArrowLeft} size="2x" />
+                                        <div className={style.slider_controls}>
+                                            <button onClick={goToPrevious} className={style.slider_button_left}>
+                                                <IoIosArrowBack fontSize={34} color='black' />
+
                                             </button>
-                                            <button className="slider-button right">
-                                                <FontAwesomeIcon icon={faArrowRight} size="2x" />
+                                            <button onClick={goToNext} className={style.slider_button_right}>
+                                                <IoIosArrowForward fontSize={34} color='black' />
                                             </button>
+
                                         </div>
                                     </div>
 
@@ -102,11 +121,11 @@ export default function page() {
 
                     </div>
 
-                </>
+                </div>
 
             )
 
             }
-        </>
+        </div>
     )
 }
