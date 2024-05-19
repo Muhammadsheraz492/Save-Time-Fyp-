@@ -551,11 +551,13 @@
     line-height: 14px;
     /* 100% */
 }
-.gig_reviews{
+
+.gig_reviews {
     display: flex;
     gap: 5px;
     align-items: center;
 }
+
 .gig_review {
     color: #404145;
     font-family: Inter;
@@ -564,4 +566,108 @@
     font-weight: 700;
     line-height: 22.4px;
     /* 149.333% */
+}
+
+.starts {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.start_line {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.Outerline {
+    width: 219.094px;
+    height: 8px;
+    flex-shrink: 0;
+    background-color: #E4E5E7;
+    border-radius: 50px;
+}
+
+.start_title {
+    color: #446EE7;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.start_order {
+    color: #446EE7;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.rating_breakdown {
+    color: #404145;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22.4px;
+    /* 149.333% */
+
+}
+
+.divider {
+    height: 1px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-top: 1px solid #DADBDD;
+}
+
+.country {
+    color: #62646A;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    /* 150% */
+}
+
+.month {
+    color: #62646A;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    /* 161.538% */
+}
+.review_des{
+    color: #404145;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+.seller_name{
+    color: #404145;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 160% */
+}
+.see_more{
+    color: #00A79D;
+text-align: start;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+cursor: pointer;
 }

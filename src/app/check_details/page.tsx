@@ -18,7 +18,23 @@ export default function page() {
     const [currentIndex, setCurrentIndex] = useState(1);
 
     var items = Array.from(Array(Math.floor(window.innerWidth / 500)).keys());
-
+    const starts = [
+        {
+            star: 5, total_order: 902, current_order: 812, title: "Rating Breakdown",
+        },
+        {
+            star: 4, total_order: 902, current_order: 800, title: "Seller communication level",
+        },
+        {
+            star: 3, total_order: 902, current_order: 500, title: "Recommend to a friend",
+        },
+        {
+            star: 2, total_order: 902, current_order: 400, title: "Service as described",
+        },
+        {
+            star: 1, total_order: 902, current_order: 200, title: "Service as described",
+        }
+    ]
 
     const goToNext = () => {
 
@@ -371,8 +387,131 @@ export default function page() {
                         <div style={{ height: 20 }} />
                         <div className={style.gig_reviews}>
                             <span className={style.gig_review}>902 reviews for this Gig</span>
-                             <StarRating rating={3.5} />
+                            <StarRating rating={3.5} />
                         </div>
+                        <div style={{ height: 5 }} />
+                        {starts.map((e, i) => (
+
+                            <div className={style.starts}>
+                                <div className={style.start_line}>
+                                    <span className={style.start_title}>{e.star}Stars</span>
+                                    <div className={style.Outerline}>
+
+                                        <div
+                                            style={{
+                                                width: `${(e.current_order / e.total_order) * 100}%`,
+
+                                                backgroundColor: "#FFB33E",
+                                                height: 8,
+                                                flexShrink: 0,
+                                                borderRadius: 50
+                                            }}
+                                        />
+                                    </div>
+                                    <span className={style.start_order}>({e.current_order})</span>
+                                </div>
+                                <span className={style.rating_breakdown}>{e.title}</span>
+                            </div>
+                        ))
+
+
+                        }
+                        <div style={{ height: 10 }} />
+                        <div style={{ width: "60%", backgroundColor: "#DADBDD", height: 1 }} />
+                        <div style={{ height: 10 }} />
+                        <div style={{ width: "60%" }} >
+                            <div style={{ height: 10 }} />
+                            <div className='flex items-start gap-5'>
+                                <div className="flex items-center">
+                                    <div >
+                                        <div
+                                            // src='https://avatars.githubusercontent.com/u/90733116?v=4'
+                                            style={{
+                                                width: 80,
+                                                height: 80,
+                                                backgroundColor: "#000",
+                                                borderRadius: "50%",
+                                            }}
+
+                                        />
+                                        {/* <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border border-white rounded-full"></div> */}
+                                    </div>
+                                </div>
+                                <div className="">
+                                    <div style={{ height: 5 }} />
+
+
+                                    <div className={style.seller_deatils}>
+                                        <span className={style.username}>
+                                            airb123
+                                        </span>
+                                        <div className={style.seller_rating}>
+                                            <Image
+                                                src={"/checklist.svg"}
+                                                alt='Develiery Time'
+                                                width={20}
+                                                height={20}
+                                                style={{ opacity: 0.4 }}
+
+                                            />
+                                            <span className={style.country}>United States</span>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div style={{ height: 20 }} />
+                                    <div className='flex items-start gap-2'>
+
+                                        <StarRating rating={5} />
+                                        <span className={style.month}>2 months ago</span>
+                                    </div>
+                                    <div style={{ height: 20 }} />
+                                    <span className={style.review_des}>
+                                        Great work! I wanted a video to showcase my fitness app and the designer delivered an excellent job and on time. highly satisfied. thank you!
+                                    </span>
+                                    <div style={{ height: 20 }} />
+                                    <div className='flex items-start gap-3'>
+
+                                        <div
+                                            // src='https://avatars.githubusercontent.com/u/90733116?v=4'
+                                            style={{
+                                                width: 50,
+                                                height: 50,
+                                                backgroundColor: "#000",
+                                                borderRadius: "50%",
+                                            }}
+
+                                        />
+                                        <div className="">
+                                            <div style={{ height: 5 }} />
+
+
+                                            <div className={style.seller_deatils}>
+
+                                                <span className={style.seller_name}>Seller's Response</span>
+                                                <div style={{ height: 10 }} />
+
+                                                <span className={style.review_des}>
+                                                    Thank you so much 😊
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div style={{ height: 10 }} />
+
+                        <div style={{ width: "60%", backgroundColor: "#DADBDD", height: 1 }} />
+
+                        <div style={{ height: 10 }} />
+                        <span className={style.see_more}>
+                            + See More
+                        </span>
+
                     </div>
 
 
