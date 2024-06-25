@@ -12,12 +12,77 @@ interface Dialog_props {
 function Signup_dialog({ onpress }: Dialog_props) {
     const [showOtp, setshowOtp] = useState(false)
     const inputs = useRef([]);
+    const [firstName, setfirstName] = useState('')
+    const [lastName, setlastName] = useState('')
+    const [email, setemail] = useState('')
+    const [professional, setprofessional] = useState('')
+    const [password, setpassword] = useState('')
+    const [profile, setprofile] = useState('')
+    const fileInputRef = useRef(null);
+    const [selectedFile, setSelectedFile] = useState(null);
+    const [filePreview, setFilePreview] = useState(null);
+    const [errmessage,seterrmessage]=useState("")
 
+
+    const handleDivClick = () => {
+        fileInputRef.current.click();
+    };
+    const handleFileChange = (event: { target: { files: any[]; }; }) => {
+        const file = event.target.files[0];
+        if (file) {
+            setSelectedFile(file);
+            console.log('Selected file:', file);
+
+            // Generate a URL for the file preview if it is an image
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setFilePreview(reader.result);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                setFilePreview(null);
+            }
+
+        }
+    };
+    const validateForm = () => {
+        // const errors = {};
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+        if (!firstName) {
+        //   errors = '';
+        seterrmessage("First name cannot be empty")
+        return;
+        }
+        if (!lastName) {
+          seterrmessage("Last name cannot be empty")
+          return;
+        }
+        if (!email || !emailRegex.test(email)) {
+            seterrmessage("Email not valid please use valid email")
+            return;
+  
+        }
+        if (password.length <= 10) {
+        //   errors.password = 'Password must be more than 10 characters';
+          seterrmessage("Password must be more than 10 characters")
+            return;
+        }
+        seterrmessage("")
+    
+        // setErrors(errors);
+    
+        // Return true if no errors, otherwise false
+        // return Object.keys(errors).length === 0;
+      };
+    
     // const focusNextInput = (index) => {
     //     if (index < inputs.current.length - 1) {
     //         inputs.current[index + 1].focus();
     //     }
     // };
+
     return (
         <dialog className={`
         fixed left-0 top-0 w-full h-full 
@@ -39,8 +104,8 @@ function Signup_dialog({ onpress }: Dialog_props) {
                         }}
                     >
                         <FaArrowLeftLong className="text-blue-gray-600" size={26} color='#666666'
-                        
-                        onClick={onpress}
+
+                            onClick={onpress}
                         />
                         <div className='pl-20'>
 
@@ -89,10 +154,14 @@ function Signup_dialog({ onpress }: Dialog_props) {
                                         >
                                             First Name</span>
                                         <input
-                                            type='email'
+                                            type='text'
                                             className="w-full border border-nano focus:border-blue-500"
                                             style={{ border: "none", outline: "none", color: "#000", backgroundColor: "transparent" }}
                                             placeholder='First Name'
+                                            value={firstName}
+                                            onChange={(e) => {
+                                                setfirstName(e.target.value)
+                                            }}
 
                                         />
                                     </div>
@@ -100,12 +169,16 @@ function Signup_dialog({ onpress }: Dialog_props) {
                                         <span className="text-xs font-normal leading-4 font-inter"
                                             style={{ color: "#677084" }}
                                         >
-                                            First Name</span>
+                                            Last Name</span>
                                         <input
-                                            type='email'
+                                            type='text'
                                             className="w-full border border-nano focus:border-blue-500"
                                             style={{ border: "none", outline: "none", color: "#000", backgroundColor: "transparent" }}
-                                            placeholder='First Name'
+                                            placeholder='Last Name'
+                                            value={lastName}
+                                            onChange={(e) => {
+                                                setlastName(e.target.value)
+                                            }}
 
                                         />
                                     </div>
@@ -120,8 +193,11 @@ function Signup_dialog({ onpress }: Dialog_props) {
                                         type='email'
                                         className="w-full border border-nano focus:border-blue-500"
                                         style={{ border: "none", outline: "none", color: "#000", backgroundColor: "transparent" }}
-                                        placeholder='Example@gmail.com'
-
+                                        placeholder='example@gmail.com'
+                                        value={email}
+                                        onChange={(e) => {
+                                            setemail(e.target.value)
+                                        }}
                                     />
                                 </div>
                                 <div style={{ height: 10 }} />
@@ -131,10 +207,15 @@ function Signup_dialog({ onpress }: Dialog_props) {
                                     >
                                         Professional title</span>
                                     <input
-                                        type='email'
+                                        type='text'
                                         className="w-full border border-nano focus:border-blue-500"
                                         style={{ border: "none", outline: "none", color: "#000", backgroundColor: "transparent" }}
                                         placeholder='User Interface Designer'
+                                        value={professional}
+                                        onChange={(e) => {
+                                            setprofessional(e.target.value)
+                                        }}
+
 
                                     />
                                 </div>
@@ -152,10 +233,15 @@ function Signup_dialog({ onpress }: Dialog_props) {
                                     >
                                         Password</span>
                                     <input
-                                        type='email'
+                                        type='password'
                                         className="w-full border border-nano focus:border-blue-500"
                                         style={{ border: "none", outline: "none", color: "#000", backgroundColor: "transparent" }}
                                         placeholder='Enter your Password'
+                                        value={password}
+                                        onChange={(e) => {
+                                            setpassword(e.target.value)
+                                        }}
+
 
                                     />
                                 </div>
@@ -166,9 +252,10 @@ function Signup_dialog({ onpress }: Dialog_props) {
                                 >
                                     Add a photo to help build connection and trust.</span>
                                 <div style={{ height: 10 }} />
+                                <div className='flex items-center gap-5'>
                                 <div className='flex gap-3 p-3 text-center border border-black rounded-lg cursor-pointer'
                                     onClick={() => {
-
+                                        handleDivClick()
                                     }}
                                     style={{ width: 180 }}>
                                     <TfiReload className="text-blue-gray-600" color='#000' />
@@ -176,14 +263,26 @@ function Signup_dialog({ onpress }: Dialog_props) {
                                         style={{ color: "#373F51" }}
                                     >
                                         Replace profile photo</span>
+                                    <input
+                                        type="file"
+                                        ref={fileInputRef}
+                                        style={{ display: 'none' }}
+                                        onChange={handleFileChange}
+                                        accept="image/*"
+                                    />
                                 </div>
+                                <span style={{color:"red",fontSize:14}}>{errmessage?errmessage:""}</span>
+                                </div>
+
+
                                 <div style={{ height: 20 }} />
 
                                 <div
                                     className='flex gap-3 p-3 text-center border border-black rounded-full cursor-pointer'
                                     onClick={() => {
                                         // Add your onClick logic here
-                                        setshowOtp(true)
+                                        // setshowOtp(true)
+                                        validateForm()
 
                                     }}
                                     style={{
@@ -219,7 +318,7 @@ function Signup_dialog({ onpress }: Dialog_props) {
 
 
                     </div> :
-                     <div className="relative w-full h-full overflow-auto transition-transform duration-300 ease-in-out bg-white bg-center bg-cover rounded-lg md:w-1/2"
+                    <div className="relative w-full h-full overflow-auto transition-transform duration-300 ease-in-out bg-white bg-center bg-cover rounded-lg md:w-1/2"
 
                         style={{
                             scrollbarWidth: 'none',
@@ -229,11 +328,11 @@ function Signup_dialog({ onpress }: Dialog_props) {
 
                         }}
                     >
-                        <FaArrowLeftLong className="cursor-pointer text-blue-gray-600" size={26} color='#666666' 
-                        
-                        onClick={()=>{
-                            setshowOtp(false)
-                        }}
+                        <FaArrowLeftLong className="cursor-pointer text-blue-gray-600" size={26} color='#666666'
+
+                            onClick={() => {
+                                setshowOtp(false)
+                            }}
                         />
                         <div className='pl-20'>
 
@@ -278,7 +377,7 @@ function Signup_dialog({ onpress }: Dialog_props) {
                                 <span style={{
                                     fontWeight: "bold",
                                     // color:"#677084"
-                                }}>Example@gmail.com</span>
+                                }}>{email?email:"example@gmail.com"}</span>
 
                                 <div style={{ height: 20 }} />
                                 {/* <div className="flex items-center gap-4">
@@ -369,13 +468,21 @@ onInput={() => focusNextInput(index)}
                 <div className="p-8 bg-white bg-center bg-cover rounded-lg" style={{ width: "40%", backgroundColor: 'white', borderRadius: 20, boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)' }}>
                     <div className="flex flex-col h-full justify-items-center">
                         <div style={{
+
                             borderWidth: 5,
                             width: '180px',
                             height: '180px',
                             backgroundImage: 'linear-gradient(to bottom, #ff8a00, #da1b60)',
                             borderRadius: "100%",
-                            alignSelf: "center"
-                        }}></div>
+                            alignSelf: "center",
+                            overflow: 'hidden'
+                        }}>
+                            {filePreview && (
+                                <img src={filePreview} alt="File Preview" style={{ maxWidth: '100%', height: 'auto' }} />
+                            )}
+
+
+                        </div>
 
                         <div className='flex items-center justify-center'>
                             <span className="f" style={{
@@ -385,7 +492,7 @@ onInput={() => focusNextInput(index)}
                                 color: 'transparent',
                                 fontSize: 30,
                                 textAlign: 'center'
-                            }}>First Last</span>
+                            }}>{firstName || lastName ? firstName + " " + lastName : "First Last"}</span>
                         </div>
                         <div style={{ height: 30 }} />
 
@@ -400,7 +507,7 @@ onInput={() => focusNextInput(index)}
 
                         <span style={{ fontSize: 17, color: "#4A5264" }}>EMAIL</span>
                         <div style={{ height: 10 }} />
-                        <span style={{ fontSize: 17, color: "black" }}>Email@gmail.com</span>
+                        <span style={{ fontSize: 17, color: "black" }}>{email ? email : "email@gmail.com"}</span>
                         <div style={{ height: 10 }} />
 
                         <hr style={{
@@ -412,7 +519,7 @@ onInput={() => focusNextInput(index)}
                         <div style={{ height: 10 }} />
                         <span style={{ fontSize: 17, color: "#4A5264" }}>PROFESSIONAL TITLE</span>
                         <div style={{ height: 10 }} />
-                        <span style={{ fontSize: 17, color: "black" }}>User Interface Design</span>
+                        <span style={{ fontSize: 17, color: "black" }}>{professional ? professional : "User Interface Design"}</span>
                         <div style={{ height: 10 }} />
 
                         <hr style={{

@@ -1,68 +1,120 @@
 .container {
-    /* position: fixed;
-    width: 95%;
-    z-index: 999;
-    top:0; */
     display: flex;
     background-color: #00A79D;
     align-items: center;
     justify-content: space-between;
     height: 100px;
     color: #000;
-    padding:20px;
+    padding: 20px;
 }
 
 .links {
     display: flex;
     align-items: center;
     gap: 25px;
-    /* font-size: 20px; */
     color: #000;
     outline: none;
-}
-
-.link {
-    font-size: 20px;
-    outline: none;
-    /* font-weight: 400; */
-    /* font-weight: bold; */
 }
 
 .signup {
     width: 103px;
     display: flex;
-    /* background-color: #00A79D; */
     height: 38px;
     border-radius: 10px;
     align-items: center;
     justify-content: center;
     color: #fff;
     font-size: 20px;
-    border-color: #fff;
     border: 1px solid white;
 }
-.mainbox{
+
+.mainbox {
     width: 510px;
-    gap:5px;
+    gap: 5px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-
-
-
 }
+
 .searchInput {
     width: 450px;
     height: 62px;
     flex-shrink: 0;
     align-items: center;
-    
 }
-.container input{
-    padding:10px;;
+
+.searchIcon {
+    background-color: #005A54;
+    width: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+.container input {
+    padding: 10px;
     border: none;
     font-size: 16px;
-    outline: none;  
+    outline: none;
     color: #000;
+}
 
+.userIcon {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.onlineIndicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.subMenuWrap {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.nook {
+    position: absolute;
+    /* top: -20px; */
+    right: 10px;
+    z-index: 1; 
+    background: #000;
+}
+
+
+.subMenu {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.menuItem {
+    padding: 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.menuItem:hover {
+    background-color: #f0f0f0;
 }

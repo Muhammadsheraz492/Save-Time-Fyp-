@@ -8,7 +8,7 @@ function Force_buying_nav() {
   let gigs=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
   return (
     <div className={style.main_container}>
-      <Navbar show={true} /> 
+      <Navbar show={true} onpress_login={undefined} /> 
       <div className={style.main_service_container}>
 
       <div className={style.services}>
