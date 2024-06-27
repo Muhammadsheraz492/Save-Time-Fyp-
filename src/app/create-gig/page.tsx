@@ -869,58 +869,104 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div style={{ height: 10 }} />
-           {Price_packages[0].content.map((e:any)=>(
-            <>
-            <div style={{ height: 10 }} />
+            {Price_packages[0].content.map((e: any) => (
+              <>
+                <div style={{ height: 10 }} />
 
-            <div className={style.check_gig_item}>
-              <div className={style.left_side}>
-                <span className={style.gig_title_content}>
-                 {e.translated_label}
-                </span>
-              </div>
-              <div className={style.right_side}>
-                <div className={style.price_right_side}>
-                  <div className={style.price_box}>
-                    <input
-                      className={style.checkbox}
-                      type="checkbox"
-                      style={{
-                        outline: "none",
-                      }}
-                      // checked={isChecked} // Set checked state
-                      // onChange={handleChange}
-                    />
+                <div className={style.check_gig_item}>
+                  <div className={style.left_side}>
+                    <span className={style.gig_title_content}>
+                      {e.translated_label}
+                    </span>
                   </div>
-                  <div className={style.price_box}>
-                    <input
-                      className={style.checkbox}
-                      type="checkbox"
-                      style={{
-                        outline: "none",
-                      }}
-                      // checked={isChecked} // Set checked state
-                      // onChange={handleChange}
-                    />
-                  </div>
-                  <div className={style.price_box}>
-                    <input
-                      className={style.checkbox}
-                      type="checkbox"
-                      style={{
-                        outline: "none",
-                      }}
-                      // checked={isChecked} // Set checked state
-                      // onChange={handleChange}
-                    />
+                  <div className={style.right_side}>
+                    <div className={style.price_right_side}>
+                      <div className={style.price_box}>
+                        {e.edit_type == "checkbox" ? (
+                          <input
+                            className={style.checkbox}
+                            type="checkbox"
+                            style={{
+                              outline: "none",
+                            }}
+                            // checked={isChecked} // Set checked state
+                            // onChange={handleChange}
+                          />
+                        ) : (
+                            <select className={style.dropdown} name="cars">
+                            {
+                             e?.data_options.map((e:any)=>(
+                                 (
+                                     <>
+                                     <option value={e.value}>{e.text}</option>
+                                     </>
+     
+                                 )
+                             ))
+                            }
+                     
+                           </select>
+                        )}
+                      </div>
+                      <div className={style.price_box}>
+                      {e.edit_type == "checkbox" ? (
+                          <input
+                            className={style.checkbox}
+                            type="checkbox"
+                            style={{
+                              outline: "none",
+                            }}
+                            // checked={isChecked} // Set checked state
+                            // onChange={handleChange}
+                          />
+                        ) : (
+                          <select className={style.dropdown} name="cars">
+                           {
+                            e?.data_options.map((e:any)=>(
+                                (
+                                    <>
+                                    <option value={e.value}>{e.text}</option>
+                                    </>
+    
+                                )
+                            ))
+                           }
+                    
+                          </select>
+                        )}
+                      </div>
+                      <div className={style.price_box}>
+                      {e.edit_type == "checkbox" ? (
+                          <input
+                            className={style.checkbox}
+                            type="checkbox"
+                            style={{
+                              outline: "none",
+                            }}
+                            // checked={isChecked} // Set checked state
+                            // onChange={handleChange}
+                          />
+                        ) : (
+                            <select className={style.dropdown} name="cars">
+                            {
+                             e?.data_options.map((e:any)=>(
+                                 (
+                                     <>
+                                     <option value={e.value}>{e.text}</option>
+                                     </>
+     
+                                 )
+                             ))
+                            }
+                     
+                           </select>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div></>
-           ))
-
-           }
-            
+              </>
+            ))}
           </div>
           <div style={{ height: 40 }} />
           <div className={style.showrightside}>

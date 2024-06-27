@@ -204,3 +204,7 @@ height: 100px;
     height: 20px;
     outline: none;
 }
+.dropdown{
+    width: 100%;
+    outline: none;
+}
