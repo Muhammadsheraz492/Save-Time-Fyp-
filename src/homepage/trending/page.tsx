@@ -9,7 +9,23 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Seller_component from '../componet/seller_component'
 function Trending_Seller() {
-    let data = [1, 2, 3, 4, 5, 6, 7, 8];
+    let data = [{
+        "name":"Muhammad Shiraz",
+        "profession":"Programmer"
+    }, 
+    {
+        "name":"Annie",
+        "profession":"Graphic Designer"
+    },
+    {
+        "name":"Sidra ",
+        "profession":"Frontend Developer"
+    },
+    {
+        "name":"Ali ",
+        "profession":"Data Scientist"
+    }
+   ];
 
     var settings = {
       dots: false,
@@ -25,7 +41,7 @@ function Trending_Seller() {
             <Text_component title={"Trending"} button={false} second={'Sellers'} />
              <Slider {...settings}>
         {data.map((e) => (
-             <Seller_component />
+             <Seller_component data={e} />
           
         ))}
         </Slider>

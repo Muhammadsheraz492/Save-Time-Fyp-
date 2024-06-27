@@ -16,7 +16,7 @@ export default function page() {
     const Category_Array = ["Video & Animation", "App & Website Previews"]
     const Gig_images = ["https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/448837/original/20fd768872785df8a3a5f932f84167ad1a9f4d3e/do-keyword-research-for-your-niche-or-business.png", "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/448837/original/99a27d78676c7b0e221b9e7c326826e411b11eda/do-keyword-research-for-your-niche-or-business.jpg"]
     const [currentIndex, setCurrentIndex] = useState(1);
-
+    const [package_index,setpackage_index]=useState(0)
     var items = Array.from(Array(Math.floor(window.innerWidth / 500)).keys());
     const starts = [
         {
@@ -33,6 +33,281 @@ export default function page() {
         },
         {
             star: 1, total_order: 902, current_order: 200, title: "Service as described",
+        }
+    ]
+    const Packages= [
+        {
+            "id": 1,
+            "duration_unit": "day",
+            "title": "Basic Package",
+            "description": "This is Basic Package description",
+            "duration": "1",
+            "price": "100",
+            "content": [
+                {
+                    "id": 1,
+                    "content_id": 1,
+                    "title": "Revisions",
+                    "translated_label": "Revisions",
+                    "edit_type": "dropdown",
+                    "included_modifications": "1",
+                    "active": false
+                },
+                {
+                    "id": 2,
+                    "content_id": 2,
+                    "title": "Versions Included",
+                    "translated_label": "Number of concepts included",
+                    "edit_type": "dropdown",
+                    "included_modifications": "1",
+                    "active": false
+                },
+                {
+                    "id": 3,
+                    "content_id": 3,
+                    "title": "Logo transparency",
+                    "translated_label": "Logo transparency",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 4,
+                    "content_id": 4,
+                    "title": "Vector file",
+                    "translated_label": "Vector file",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 5,
+                    "content_id": 5,
+                    "title": "High resolution",
+                    "translated_label": "Printable file",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 6,
+                    "content_id": 6,
+                    "title": "3D Image",
+                    "translated_label": "3D mockup",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 7,
+                    "content_id": 7,
+                    "title": "Source File",
+                    "translated_label": "Source file",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 8,
+                    "content_id": 8,
+                    "title": "Stationery designs",
+                    "translated_label": "Stationery designs",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": true
+                },
+                {
+                    "id": 9,
+                    "content_id": 9,
+                    "title": "Social media kit",
+                    "translated_label": "Social media kit",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "duration_unit": "day",
+            "title": "Standard Package",
+            "description": "This is Basic Package description",
+            "duration": "2",
+            "price": "200",
+            "content": [
+                {
+                    "id": 10,
+                    "content_id": 1,
+                    "title": "Revisions",
+                    "translated_label": "Revisions",
+                    "edit_type": "dropdown",
+                    "included_modifications": "2",
+                    "active": false
+                },
+                {
+                    "id": 11,
+                    "content_id": 2,
+                    "title": "Versions Included",
+                    "translated_label": "Number of concepts included",
+                    "edit_type": "dropdown",
+                    "included_modifications": "1",
+                    "active": false
+                },
+                {
+                    "id": 12,
+                    "content_id": 3,
+                    "title": "Logo transparency",
+                    "translated_label": "Logo transparency",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 13,
+                    "content_id": 4,
+                    "title": "Vector file",
+                    "translated_label": "Vector file",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 14,
+                    "content_id": 5,
+                    "title": "High resolution",
+                    "translated_label": "Printable file",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 15,
+                    "content_id": 6,
+                    "title": "3D Image",
+                    "translated_label": "3D mockup",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 16,
+                    "content_id": 7,
+                    "title": "Source File",
+                    "translated_label": "Source file",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 17,
+                    "content_id": 8,
+                    "title": "Stationery designs",
+                    "translated_label": "Stationery designs",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 18,
+                    "content_id": 9,
+                    "title": "Social media kit",
+                    "translated_label": "Social media kit",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "duration_unit": "day",
+            "title": "Premium Package",
+            "description": "This is Basic Package description",
+            "duration": "2",
+            "price": "200",
+            "content": [
+                {
+                    "id": 19,
+                    "content_id": 1,
+                    "title": "Revisions",
+                    "translated_label": "Revisions",
+                    "edit_type": "dropdown",
+                    "included_modifications": "1",
+                    "active": false
+                },
+                {
+                    "id": 20,
+                    "content_id": 2,
+                    "title": "Versions Included",
+                    "translated_label": "Number of concepts included",
+                    "edit_type": "dropdown",
+                    "included_modifications": "1",
+                    "active": false
+                },
+                {
+                    "id": 21,
+                    "content_id": 3,
+                    "title": "Logo transparency",
+                    "translated_label": "Logo transparency",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 22,
+                    "content_id": 4,
+                    "title": "Vector file",
+                    "translated_label": "Vector file",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 23,
+                    "content_id": 5,
+                    "title": "High resolution",
+                    "translated_label": "Printable file",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 24,
+                    "content_id": 6,
+                    "title": "3D Image",
+                    "translated_label": "3D mockup",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 25,
+                    "content_id": 7,
+                    "title": "Source File",
+                    "translated_label": "Source file",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 26,
+                    "content_id": 8,
+                    "title": "Stationery designs",
+                    "translated_label": "Stationery designs",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                },
+                {
+                    "id": 27,
+                    "content_id": 9,
+                    "title": "Social media kit",
+                    "translated_label": "Social media kit",
+                    "edit_type": "checkbox",
+                    "included_modifications": "",
+                    "active": false
+                }
+            ]
         }
     ]
 
@@ -241,13 +516,26 @@ export default function page() {
 
                         <div className={style.Pricing_box}>
                             <div className={style.packages}>
-                                <span className={style.package_item}>
-                                    Basic
+                                <span className={style.package_item}
+                                
+                                onClick={()=>{
+                                    setpackage_index(0)
+                                }}
+                                >
+                                   Basic
                                 </span>
-                                <span className={style.package_item_unactive}>
+                                <span className={style.package_item_unactive}
+                                onClick={()=>{
+                                    setpackage_index(1)
+                                }}
+                                >
                                     Standard
                                 </span>
-                                <span className={style.package_item_unactive}>
+                                <span className={style.package_item_unactive}
+                                   onClick={()=>{
+                                    setpackage_index(2)
+                                }}
+                                >
                                     Premium
                                 </span>
                             </div>
@@ -256,12 +544,12 @@ export default function page() {
 
                                 <div className={style.custom_package}>
 
-                                    <span className={style.custom_package_title}>Basic Promo</span>
-                                    <span className={style.custom_package_price}>$868</span>
+                                    <span className={style.custom_package_title}> {Packages[package_index].title}</span>
+                                    <span className={style.custom_package_price}>${Packages[package_index].price}</span>
 
                                 </div>
 
-                                <span className={style.pack_desc}>Basic Package Only Laptop-scenes Includes, Background Music,Logo, and 720HD Video</span>
+                                <span className={style.pack_desc}> {Packages[package_index].description}</span>
                                 <div className={style.delivery_time_card}>
                                     <div className={style.days_card}>
 
@@ -272,7 +560,7 @@ export default function page() {
                                             height={20}
 
                                         />
-                                        <span className={style.delivery_days}>4 Days Delivery</span>
+                                        <span className={style.delivery_days}>{Packages[package_index].duration} {Packages[package_index].duration_unit} Delivery</span>
                                     </div>
                                     <div className={style.days_card}>
 

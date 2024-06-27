@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";               //here
 import "slick-carousel/slick/slick-theme.css"; 
 
 export default function Popular() {
-  let data = [1, 2, 3, 4, 5, 6, 7, 8];
+  let data = ["Web Development", "App Develpment","Full Stake Development", "Seo", "Digital Makreting",];
 
   var settings = {
     dots: false,
@@ -57,9 +57,9 @@ export default function Popular() {
           <div key={e} className={style.itemCard}>
             <div className={style.imageOverlay}>
               <Image src={"/coding.svg"} alt="Coding Icon" width={10} height={20} />
+              <div  style={{height:10}}/>
               <span>
-                WEB <br />
-                DEVELOPMENT
+                {e}
               </span>
             </div>
             <Image

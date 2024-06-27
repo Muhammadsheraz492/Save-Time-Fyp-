@@ -5,7 +5,7 @@ import Text_component from '../componet/text_component'
 import Category_card from '../componet/category_card'
 import Image from 'next/image'
 function Catgory() {
-    let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let data = ["Programming & <br/> Tech","Graphics & Design", "Digital Marketing", "Writing & Translation", "Video & Animation", "AI Services", "Music & Audio", "Business"];
     const [showMore, setShowMore] = useState(false);
 
     // Slice the data array to show only the first 6 items or all items depending on the showMore state
@@ -16,7 +16,7 @@ function Catgory() {
             <Text_component title={"Here are Something You’d Need"} button={!showMore} onClick={() => setShowMore(true)} />
             <div className={style.category}>
                 {displayedData.map((e) => (
-                    <Category_card key={e} />
+                    <Category_card data={e}  key={e} />
                 ))}
             </div>
             <div className={style.more}

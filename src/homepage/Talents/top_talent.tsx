@@ -8,7 +8,39 @@ import Gig_card from '../componet/gig_card';
 
 function Top_talent() {
 
-  let data = [1, 2, 3, 4, 5, 6, 7, 8];
+  let data = [{
+    "title":"I will Develop android App",
+    "name":"Sheraz",
+    "level":"level 1",
+    "price":"300$"
+  },
+  {
+    "title":"I will Develop android App",
+    "name":"Sheraz",
+    "level":"level 1",
+    "price":"300$"
+  },
+  {
+    "title":"I will Develop android App",
+    "name":"Sheraz",
+    "level":"level 2",
+    "price":"300$"
+  },
+  {
+    "title":"I will Develop android App",
+    "name":"Sheraz",
+    "level":"level 1",
+    "price":"300$"
+  }
+  ,
+  {
+    "title":"I will Develop android App",
+    "name":"Sheraz",
+    "level":"level 2",
+    "price":"300$"
+  }
+
+];
 
   var settings = {
     dots: false,
@@ -48,12 +80,13 @@ function Top_talent() {
         }} 
       />
       <Slider {...settings}>
-        {data.map((e) => (    
+        {data.map((e,index) => (    
           <div
-            key={e}
+            key={index.toString()} 
             className='flex-wrap '
             style={{ filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))' }}>
-              <Gig_card />
+              
+              <Gig_card data={e} />
           </div>
         ))}
       </Slider> 

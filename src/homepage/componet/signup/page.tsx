@@ -7,6 +7,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { TfiReload } from "react-icons/tfi";
 import { CSSTransition } from "react-transition-group";
 import axios from "axios";
+import LoadingDialog from "../loader/loader";
 interface Dialog_props {
   onpress: any;
 }
@@ -24,6 +25,7 @@ function Signup_dialog({ onpress }: Dialog_props) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [filePreview, setFilePreview] = useState(null);
   const [errmessage, seterrmessage] = useState("");
+  const [isloading,setisloading]=useState(false)
 
   const handleDivClick = () => {
     fileInputRef.current.click();
@@ -91,7 +93,7 @@ function Signup_dialog({ onpress }: Dialog_props) {
     const headers = {
       Accept: "application/json, text/plain, */*",
     };
-
+    setisloading(true)
     try {
       const response = await axios.post(
         "http://127.0.0.1:8000/seller/register/",
@@ -101,12 +103,16 @@ function Signup_dialog({ onpress }: Dialog_props) {
         }
       );
       console.log(response.data.success);
+    setisloading(false)
+
       if (response.data.success) {
         setshowOtp(!showOtp);
       }
 
       //   console.log(response.data);
     } catch (error: any) {
+    setisloading(false)
+
       console.error("Error:", error.message);
       //   console.log('RESPONSE',error.response);
       if (error.response) {
@@ -128,6 +134,11 @@ function Signup_dialog({ onpress }: Dialog_props) {
         ${style.fadeIn}
     `}
     >
+{
+  isloading&&(
+    <LoadingDialog />
+  )
+}
       <div className="flex justify-between w-full h-full p-10 m-auto bg-white bg-center bg-cover rounded-lg">
         {!showOtp ? (
           <div
