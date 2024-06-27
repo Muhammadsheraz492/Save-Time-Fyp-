@@ -19,6 +19,470 @@ const Page: React.FC = () => {
     "Requirements",
     "Gallery",
   ];
+  const Price_packages = [
+    {
+      id: 1,
+      duration_unit: "day",
+      is_duration_limit: true,
+      is_content: true,
+      duration_limit: [1, 2, 3, 4, 5, 6, 7, 10, 14, 21, 30, 45, 60, 75, 90],
+      content: [
+        {
+          id: 1,
+          title: "Revisions",
+          translated_label: "Revisions",
+          edit_type: "dropdown",
+          data_options: [
+            {
+              value: "0",
+              text: "0",
+              val: "0",
+            },
+            {
+              value: "1",
+              text: "1",
+              val: "1",
+            },
+            {
+              value: "2",
+              text: "2",
+              val: "2",
+            },
+            {
+              value: "3",
+              text: "3",
+              val: "3",
+            },
+            {
+              value: "4",
+              text: "4",
+              val: "4",
+            },
+            {
+              value: "5",
+              text: "5",
+              val: "5",
+            },
+            {
+              value: "6",
+              text: "6",
+              val: "6",
+            },
+            {
+              value: "7",
+              text: "7",
+              val: "7",
+            },
+            {
+              value: "8",
+              text: "8",
+              val: "8",
+            },
+            {
+              value: "9",
+              text: "9",
+              val: "9",
+            },
+            {
+              value: "UNLIMITED",
+              text: "UNLIMITED",
+              val: "UNLIMITED",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Versions Included",
+          translated_label: "Number of concepts included",
+          edit_type: "dropdown",
+          data_options: [
+            {
+              value: "1",
+              text: "1",
+              val: "1",
+            },
+            {
+              value: "2",
+              text: "2",
+              val: "2",
+            },
+            {
+              value: "3",
+              text: "3",
+              val: "3",
+            },
+            {
+              value: "4",
+              text: "4",
+              val: "4",
+            },
+            {
+              value: "5",
+              text: "5",
+              val: "5",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Logo transparency",
+          translated_label: "Logo transparency",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 4,
+          title: "Vector file",
+          translated_label: "Vector file",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 5,
+          title: "High resolution",
+          translated_label: "Printable file",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 6,
+          title: "3D Image",
+          translated_label: "3D mockup",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 7,
+          title: "Source File",
+          translated_label: "Source file",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 8,
+          title: "Stationery designs",
+          translated_label: "Stationery designs",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 9,
+          title: "Social media kit",
+          translated_label: "Social media kit",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+      ],
+    },
+    {
+      id: 2,
+      duration_unit: "day",
+      is_duration_limit: true,
+      is_content: true,
+      duration_limit: [1, 2, 3, 4, 5, 6, 7, 10, 14, 21, 30, 45, 60, 75, 90],
+      content: [
+        {
+          id: 10,
+          title: "Revisions",
+          translated_label: "Revisions",
+          edit_type: "dropdown",
+          data_options: [
+            {
+              value: "0",
+              text: "0",
+              val: "0",
+            },
+            {
+              value: "1",
+              text: "1",
+              val: "1",
+            },
+            {
+              value: "2",
+              text: "2",
+              val: "2",
+            },
+            {
+              value: "3",
+              text: "3",
+              val: "3",
+            },
+            {
+              value: "4",
+              text: "4",
+              val: "4",
+            },
+            {
+              value: "5",
+              text: "5",
+              val: "5",
+            },
+            {
+              value: "6",
+              text: "6",
+              val: "6",
+            },
+            {
+              value: "7",
+              text: "7",
+              val: "7",
+            },
+            {
+              value: "8",
+              text: "8",
+              val: "8",
+            },
+            {
+              value: "9",
+              text: "9",
+              val: "9",
+            },
+            {
+              value: "UNLIMITED",
+              text: "UNLIMITED",
+              val: "UNLIMITED",
+            },
+          ],
+        },
+        {
+          id: 11,
+          title: "Versions Included",
+          translated_label: "Number of concepts included",
+          edit_type: "dropdown",
+          data_options: [
+            {
+              value: "1",
+              text: "1",
+              val: "1",
+            },
+            {
+              value: "2",
+              text: "2",
+              val: "2",
+            },
+            {
+              value: "3",
+              text: "3",
+              val: "3",
+            },
+            {
+              value: "4",
+              text: "4",
+              val: "4",
+            },
+            {
+              value: "5",
+              text: "5",
+              val: "5",
+            },
+          ],
+        },
+        {
+          id: 12,
+          title: "Logo transparency",
+          translated_label: "Logo transparency",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 13,
+          title: "Vector file",
+          translated_label: "Vector file",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 14,
+          title: "High resolution",
+          translated_label: "Printable file",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 15,
+          title: "3D Image",
+          translated_label: "3D mockup",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 16,
+          title: "Source File",
+          translated_label: "Source file",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 17,
+          title: "Stationery designs",
+          translated_label: "Stationery designs",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 18,
+          title: "Social media kit",
+          translated_label: "Social media kit",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+      ],
+    },
+    {
+      id: 3,
+      duration_unit: "day",
+      is_duration_limit: true,
+      is_content: true,
+      duration_limit: [1, 2, 3, 4, 5, 6, 7, 10, 14, 21, 30, 45, 60, 75, 90],
+      content: [
+        {
+          id: 19,
+          title: "Revisions",
+          translated_label: "Revisions",
+          edit_type: "dropdown",
+          data_options: [
+            {
+              value: "0",
+              text: "0",
+              val: "0",
+            },
+            {
+              value: "1",
+              text: "1",
+              val: "1",
+            },
+            {
+              value: "2",
+              text: "2",
+              val: "2",
+            },
+            {
+              value: "3",
+              text: "3",
+              val: "3",
+            },
+            {
+              value: "4",
+              text: "4",
+              val: "4",
+            },
+            {
+              value: "5",
+              text: "5",
+              val: "5",
+            },
+            {
+              value: "6",
+              text: "6",
+              val: "6",
+            },
+            {
+              value: "7",
+              text: "7",
+              val: "7",
+            },
+            {
+              value: "8",
+              text: "8",
+              val: "8",
+            },
+            {
+              value: "9",
+              text: "9",
+              val: "9",
+            },
+            {
+              value: "UNLIMITED",
+              text: "UNLIMITED",
+              val: "UNLIMITED",
+            },
+          ],
+        },
+        {
+          id: 20,
+          title: "Versions Included",
+          translated_label: "Number of concepts included",
+          edit_type: "dropdown",
+          data_options: [
+            {
+              value: "1",
+              text: "1",
+              val: "1",
+            },
+            {
+              value: "2",
+              text: "2",
+              val: "2",
+            },
+            {
+              value: "3",
+              text: "3",
+              val: "3",
+            },
+            {
+              value: "4",
+              text: "4",
+              val: "4",
+            },
+            {
+              value: "5",
+              text: "5",
+              val: "5",
+            },
+          ],
+        },
+        {
+          id: 21,
+          title: "Logo transparency",
+          translated_label: "Logo transparency",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 22,
+          title: "Vector file",
+          translated_label: "Vector file",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 23,
+          title: "High resolution",
+          translated_label: "Printable file",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 24,
+          title: "3D Image",
+          translated_label: "3D mockup",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 25,
+          title: "Source File",
+          translated_label: "Source file",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 26,
+          title: "Stationery designs",
+          translated_label: "Stationery designs",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+        {
+          id: 27,
+          title: "Social media kit",
+          translated_label: "Social media kit",
+          edit_type: "checkbox",
+          data_options: false,
+        },
+      ],
+    },
+  ];
   return (
     <div
       style={{
@@ -405,43 +869,46 @@ const Page: React.FC = () => {
               </div>
             </div>
             <div style={{ height: 10 }} />
+           {Price_packages[0].content.map((e:any)=>(
+            <>
+            <div style={{ height: 10 }} />
 
             <div className={style.check_gig_item}>
               <div className={style.left_side}>
                 <span className={style.gig_title_content}>
-                  Functional Android app
+                 {e.translated_label}
                 </span>
               </div>
               <div className={style.right_side}>
                 <div className={style.price_right_side}>
                   <div className={style.price_box}>
                     <input
-                    className={style.checkbox}
+                      className={style.checkbox}
                       type="checkbox"
                       style={{
-                        outline:'none'
+                        outline: "none",
                       }}
                       // checked={isChecked} // Set checked state
                       // onChange={handleChange}
                     />
                   </div>
                   <div className={style.price_box}>
-                  <input
-                    className={style.checkbox}
+                    <input
+                      className={style.checkbox}
                       type="checkbox"
                       style={{
-                        outline:'none'
+                        outline: "none",
                       }}
                       // checked={isChecked} // Set checked state
                       // onChange={handleChange}
                     />
                   </div>
                   <div className={style.price_box}>
-                  <input
-                    className={style.checkbox}
+                    <input
+                      className={style.checkbox}
                       type="checkbox"
                       style={{
-                        outline:'none'
+                        outline: "none",
                       }}
                       // checked={isChecked} // Set checked state
                       // onChange={handleChange}
@@ -449,7 +916,11 @@ const Page: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div></>
+           ))
+
+           }
+            
           </div>
           <div style={{ height: 40 }} />
           <div className={style.showrightside}>
