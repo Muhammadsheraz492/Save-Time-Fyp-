@@ -84,7 +84,7 @@
     width:70%;
     height: auto;
   }
-  .input_box {
+  .input_box,.Description_input_box {
     flex: 1;
     height: 100px;
     background-color: #fff;
@@ -149,7 +149,7 @@
     padding: 10px;
     cursor: pointer;
 }
-.showrightside{
+.showrightside,.images_gereate{
     width: 75%;
     display: flex;
     justify-content: flex-end;
@@ -207,4 +207,101 @@ height: 100px;
 .dropdown{
     width: 100%;
     outline: none;
+}
+
+.Description_input_box{
+  height: 300px;
+}
+.Image_right_side{
+
+  flex: 1;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+.Image_right_sid{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.image_box,.image_box_ai {
+  width: 48%;
+  height: 200px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.images_gereate{
+  width: 100%;
+}
+.image_box,.image_box_ai img {
+  max-width: 100%; /* Ensures the image does not exceed its container */
+  max-height: 100%; /* Ensures the image does not exceed its container */
+  object-fit: contain; /* Scales the image to fit inside the container */
+}
+.modalmask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.modaldialog {
+  background-color: white;
+  width: 80%;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 80%; 
+  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  align-items: center;
+
+
+  overflow: hidden; 
+}
+
+.modal_mask.hidden {
+  display: none; /* Initially hidden */
+}
+
+.title {
+  font-size: large;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.image_box_ai{
+  width: 200px;
+  position: relative;
+}
+.image_box_ai img{
+  border-radius: 10px;
+  width: 90%;
+  height: 90%;
+  cursor: pointer;
+}
+.select{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
 }

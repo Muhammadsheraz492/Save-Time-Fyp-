@@ -4,19 +4,42 @@ import React, { useState } from "react";
 import style from "./create_gig.module.css";
 import { FaChevronRight } from "react-icons/fa6";
 import { FaInfoCircle } from "react-icons/fa";
+import Image from "next/image";
 const Page: React.FC = () => {
   const [overview, setOverview] = useState<string[]>(["Overview"]);
+  const [aiselected_images,setaiselected_images]=useState<number[]>([])
   const [current_index, setcurrent_index] = useState(0);
+  const [aiImageslist,setaiImageslist]=useState([1,2,3,4,5,6,7,8,9])
+  const [openmodel,setopenmodel]=useState(false)
+  const [desc, setdesc] = useState("");
   const addItem = (text: string) => {
     const newOverview = [...overview, text];
     setOverview(newOverview);
   };
-
+  const addimage=(index:number)=>{
+    if (aiselected_images.includes(index)) {
+      // // Image is already selected, remove it
+      // const newSelection = aiselected_images.filter((selected) => selected !== index);
+      // setaiselected_images(newSelection);
+    } else {
+      // Image is not selected, add it
+      if (aiselected_images.length < 3) {
+        setaiselected_images([...aiselected_images, index]);
+      } else {
+        // Replace the oldest selection (the first one)
+        const newSelection = [...aiselected_images];
+        newSelection.shift(); // Remove the oldest selection
+        newSelection.push(index); // Add the new selection
+        setaiselected_images(newSelection);
+      }
+    }
+   
+  }
   const data: string[] = [
     "Overview",
     "Pricing",
     "Description & FAQ",
-    "Requirements",
+    // "Requirements",
     "Gallery",
   ];
   const Price_packages = [
@@ -893,23 +916,17 @@ const Page: React.FC = () => {
                             // onChange={handleChange}
                           />
                         ) : (
-                            <select className={style.dropdown} name="cars">
-                            {
-                             e?.data_options.map((e:any)=>(
-                                 (
-                                     <>
-                                     <option value={e.value}>{e.text}</option>
-                                     </>
-     
-                                 )
-                             ))
-                            }
-                     
-                           </select>
+                          <select className={style.dropdown} name="cars">
+                            {e?.data_options.map((e: any) => (
+                              <>
+                                <option value={e.value}>{e.text}</option>
+                              </>
+                            ))}
+                          </select>
                         )}
                       </div>
                       <div className={style.price_box}>
-                      {e.edit_type == "checkbox" ? (
+                        {e.edit_type == "checkbox" ? (
                           <input
                             className={style.checkbox}
                             type="checkbox"
@@ -921,22 +938,16 @@ const Page: React.FC = () => {
                           />
                         ) : (
                           <select className={style.dropdown} name="cars">
-                           {
-                            e?.data_options.map((e:any)=>(
-                                (
-                                    <>
-                                    <option value={e.value}>{e.text}</option>
-                                    </>
-    
-                                )
-                            ))
-                           }
-                    
+                            {e?.data_options.map((e: any) => (
+                              <>
+                                <option value={e.value}>{e.text}</option>
+                              </>
+                            ))}
                           </select>
                         )}
                       </div>
                       <div className={style.price_box}>
-                      {e.edit_type == "checkbox" ? (
+                        {e.edit_type == "checkbox" ? (
                           <input
                             className={style.checkbox}
                             type="checkbox"
@@ -947,19 +958,13 @@ const Page: React.FC = () => {
                             // onChange={handleChange}
                           />
                         ) : (
-                            <select className={style.dropdown} name="cars">
-                            {
-                             e?.data_options.map((e:any)=>(
-                                 (
-                                     <>
-                                     <option value={e.value}>{e.text}</option>
-                                     </>
-     
-                                 )
-                             ))
-                            }
-                     
-                           </select>
+                          <select className={style.dropdown} name="cars">
+                            {e?.data_options.map((e: any) => (
+                              <>
+                                <option value={e.value}>{e.text}</option>
+                              </>
+                            ))}
+                          </select>
                         )}
                       </div>
                     </div>
@@ -973,8 +978,8 @@ const Page: React.FC = () => {
             <div
               className={style.savebtncontinue}
               onClick={() => {
-                addItem("Pricing");
-                setcurrent_index(1);
+                addItem("Description & FAQ");
+                setcurrent_index(2);
               }}
             >
               <text className={style.btn_text}>Save & Continue</text>
@@ -983,6 +988,206 @@ const Page: React.FC = () => {
           <div style={{ height: 100 }} />
         </>
       )}
+      {current_index == 2 && (
+        <>
+          <div style={{ height: 20 }} />
+
+          <div className={style.category}>
+            <div className={style.gig_title}>
+              <div className={style.left_side}>
+                <span className={style.gig_title_content}>Description</span>
+                <span className={style.gig_title_content_desc}>
+                  Briefly Describe Your Gig
+                </span>
+              </div>
+              <div className={style.right_side}>
+                <div className={style.Description_input_box}>
+                  <textarea
+                    placeholder="I will develop"
+                    style={{
+                      resize: "none",
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                      outline: "none",
+                      padding: "10px",
+                      fontSize: "16px",
+                      overflow: "hidden",
+                    }}
+                    value={desc}
+                    rows={4}
+                    maxLength={500}
+                    onChange={(e) => {
+                      setdesc(e.target.value);
+                    }}
+                  />
+                </div>
+                <div style={{ height: 10 }} />
+                <span className={style.max}>{desc.length}/ 500 max</span>
+              </div>
+            </div>
+          </div>
+          <div style={{ height: 40 }} />
+          <div className={style.showrightside}>
+            <div
+              className={style.savebtncontinue}
+              onClick={() => {
+                addItem("Gallery");
+                setcurrent_index(3);
+              }}
+            >
+              <text className={style.btn_text}>Save & Continue</text>
+            </div>
+          </div>
+          <div style={{ height: 100 }} />
+        </>
+      )}
+      {current_index == 3 && (
+        <>
+          <div style={{ height: 20 }} />
+
+          <div className={style.category}>
+            <div className={style.gig_title}>
+              <div className={style.left_side}>
+                <span className={style.gig_title_content}>
+                  Showcase Your Services In A Gig Gallery
+                </span>
+                <span className={style.gig_title_content_desc}>
+                  Encourage buyers to choose your Gig by featuring a variety of
+                  your work.
+                </span>
+                <br />
+                <span
+                  className={style.gig_title_content_desc}
+                  style={{
+                    color: "#000000",
+                  }}
+                >
+                  Images (up to 3)
+                </span>
+              </div>
+              <div className={style.Image_right_side}>
+                <div className={style.Image_right_sid}>
+                  <div className={style.image_box}>
+                    <Image
+                      src={"/upload_image.png"}
+                      alt="Delivery Time"
+                      width={150}
+                      height={150}
+                    />
+                  </div>
+                  <div className={style.image_box}>
+                    <Image
+                      src={"/upload_image.png"}
+                      alt="Delivery Time"
+                      width={150}
+                      height={150}
+                    />
+                  </div>
+                  <div className={style.image_box}>
+                    <Image
+                      src={"/upload_image.png"}
+                      alt="Delivery Time"
+                      width={150}
+                      height={150}
+                    />
+                  </div>
+                </div>
+
+                <div className={style.images_gereate}>
+                  <div className={style.savebtncontinue}
+                  onClick={()=>[
+                    setopenmodel(true)
+                  ]}
+                  >
+                    <text className={style.btn_text}>Generate Ai Images</text>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ height: 40 }} />
+          <div className={style.showrightside}>
+            <div
+              className={style.savebtncontinue}
+              onClick={() => {
+                addItem("Gallery");
+                setcurrent_index(3);
+              }}
+            >
+              <text className={style.btn_text}>Save & Published</text>
+            </div>
+          </div>
+
+          <div style={{ height: 100 }} />
+        </>
+      )}
+     {openmodel&&(
+       <div className={style.modalmask}>
+       <div className={style.modaldialog}>
+         <h5 className={style.title}>Images Generated Through AI</h5>
+         <div style={{ height: 20 }} />
+         <div className={style.Image_right_sid}>
+         {aiImageslist.map((e,index)=>(
+             <div className={style.image_box_ai}
+             
+             style={{ border: aiselected_images.includes(index)?`2px solid #00A79D`:null }}
+             >
+             <Image
+               src={"/images.png"}
+               layout='fill' 
+               alt="Delivery Time"
+               objectFit="cover"
+               onClick={()=>{
+                 addimage(index)
+               }}
+             />
+           {aiselected_images.includes(index)&&(
+               <div className={style.select}>
+               <Image
+                     src={"/checked.png"}
+                     alt="Delivery Time"
+                     width={20}
+                     height={20}
+                   />
+                   <div 
+                   
+                   style={{
+                   height:10
+                   }}
+                   />
+               </div>
+           )
+
+           }
+           </div>
+         ))
+
+         }
+           
+         </div>
+         <div style={{ height: 80 }} />
+         <div >
+           <div
+             className={style.savebtncontinue}
+             onClick={() => {
+              //  addItem("Gallery");
+              //  setcurrent_index(3);
+              setopenmodel(false)
+             }}
+           >
+             <text className={style.btn_text}>Upload</text>
+           </div>
+         </div>
+
+         <div style={{ height: 100 }} />
+
+       </div>
+       
+     </div>
+     )
+
+     }
     </div>
   );
 };
