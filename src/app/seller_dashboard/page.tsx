@@ -2,6 +2,7 @@
 import After_login_NavBar from "@/homepage/componet/after_login_nav/page";
 import React from "react";
 import style from "./dashboard.module.css";
+import Tab from "@/homepage/componet/tabs/page"
 function getTimeElapsed(startDate) {
   const currentTime = new Date();
   const difference = currentTime - new Date(startDate);
@@ -19,16 +20,7 @@ function getTimeElapsed(startDate) {
 
   return { days, hours, minutes, seconds, isLate: true };
 }
-let data = [
-  "Dashboard",
-  "Earning",
-  "Growth & Marketing",
-  "Analytics",
-  // "Music & Audio",
-  // "Programming & Tech",
-];
 const response = [1, 2, 3];
-import { FaInfoCircle } from "react-icons/fa";
 import Image from "next/image";
 function Page() {
   return (
@@ -39,14 +31,7 @@ function Page() {
           height: 20,
         }}
       />
-      <div className={style.main_service_container}>
-        <div className={style.services}>
-          {data.map((e) => (
-            // eslint-disable-next-line react/jsx-key
-            <a href="/test">{e}</a>
-          ))}
-        </div>
-      </div>
+    <Tab />
       <div
         style={{
           height: 20,
@@ -97,8 +82,9 @@ function Page() {
             }}
           />
           <div className={style.userpanel}>
+          <div className={style.text_left}>
             <div className={style.left_side_response}>
-              <div></div>
+              
               <div className={style.left_row}>
                 <span className={style.username}>Inbox response rate</span>
                 <div className={style.row}>
@@ -163,6 +149,24 @@ function Page() {
                 </div>
               </div>
             </div>
+            <div className={style.left_side_response}>
+              
+              <div className={style.left_row}>
+                <span className={style.username}>Earned in March</span>
+                <div className={style.row}>
+                  <span className={style.NA}>$0</span>
+                </div>
+              </div>
+            </div>
+            <div className={style.left_side_response}>
+              <div className={style.left_row}>
+                <span className={style.username}>Inbox</span>
+                <div className={style.row}>
+                  <span className={style.NA}>View All</span>
+                </div>
+              </div>
+            </div>
+            </div>
             <div className={style.right_side}>
               <Order time_data={'2024-06-25T12:00:00'} />
               <div
@@ -181,15 +185,7 @@ function Page() {
             }}
           />
           <div className={style.userpanel}>
-            <div className={style.left_side_response}>
-              
-              <div className={style.left_row}>
-                <span className={style.username}>Earned in March</span>
-                <div className={style.row}>
-                  <span className={style.NA}>$0</span>
-                </div>
-              </div>
-            </div>
+           
           </div>
 
           {/* <div style={{ height: 40 }} /> */}
@@ -199,19 +195,13 @@ function Page() {
             }}
           />
           <div className={style.userpanel}>
-            <div className={style.left_side_response}>
-              <div className={style.left_row}>
-                <span className={style.username}>Inbox</span>
-                <div className={style.row}>
-                  <span className={style.NA}>View All</span>
-                </div>
-              </div>
-            </div>
+           
           </div>
 
           <div style={{ height: 40 }} />
         </div>
       </div>
+      {/* 1 */}
     </div>
   );
 }

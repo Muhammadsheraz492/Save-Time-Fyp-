@@ -1,0 +1,31 @@
+
+.main_service_container {
+
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.services {
+    width: 70%;
+    height: 63px;
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.services a {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+    /* 150% */
+}
