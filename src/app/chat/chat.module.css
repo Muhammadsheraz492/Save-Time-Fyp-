@@ -24,9 +24,9 @@
   overflow-y: auto; /* Enable vertical scrolling */
 }
 .scrollContainer {
-  flex: 1; /* Allow container to take remaining space */
-  overflow-y: auto; /* Enable scrolling */
-  padding-bottom: 20px; /* Add padding at bottom for space */
+  height: 500px;
+  overflow-y: auto;
+  padding-bottom: 20px; 
 }
 
 .rightside {
@@ -113,3 +113,71 @@ align-items: center;
     color: #fff;
     cursor: pointer;
 }
+.chat{
+    height: 300px;
+    /* background-color: cyan; */
+}
+.chat {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Messages grow from bottom to top */
+    padding: 20px;
+  }
+  
+  .messageContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between messages */
+  }
+  
+  .message {
+    max-width: 70%; /* Limit width to avoid spanning the entire width */
+    padding: 10px;
+    border-radius: 8px;
+    word-wrap: break-word; /* Wrap long messages */
+  }
+  
+  .left {
+    align-self: flex-start; /* Messages from the left */
+    background-color: #f0f0f0; /* Light background for left messages */
+  }
+  
+  .right {
+    align-self: flex-end; /* Messages from the right */
+    background-color: #00A79D; /* Different background for right messages */
+    color: #fff; /* Light text on dark background */
+  }
+  
+  .messageText {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .inputContainer {
+    margin-top: 20px; /* Space between messages and input */
+    display: flex;
+    align-items: center;
+  }
+  
+  .input {
+    flex: 1; /* Take remaining space */
+    height: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  .sendButton {
+    height: 40px;
+    padding: 0 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #00A79D;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+  

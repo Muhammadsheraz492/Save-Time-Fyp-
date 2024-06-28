@@ -7,6 +7,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { TfiReload } from "react-icons/tfi";
 import { CSSTransition } from "react-transition-group";
 import axios from "axios";
+import url from '../../../base_url.json'
 import LoadingDialog from "../loader/loader";
 interface Dialog_props {
   onpress: any;
@@ -26,6 +27,8 @@ function Signup_dialog({ onpress }: Dialog_props) {
   const [filePreview, setFilePreview] = useState(null);
   const [errmessage, seterrmessage] = useState("");
   const [isloading,setisloading]=useState(false)
+  const [otpvalue,setotpvalue]=useState()
+  const [otperrormessage,setotperrormessage]=useState('')
 
   const handleDivClick = () => {
     fileInputRef.current.click();
@@ -96,7 +99,7 @@ function Signup_dialog({ onpress }: Dialog_props) {
     setisloading(true)
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/seller/register/",
+        `${url.base_url}/seller/register/`,
         formData,
         {
           headers: headers,
@@ -113,7 +116,7 @@ function Signup_dialog({ onpress }: Dialog_props) {
     } catch (error: any) {
     setisloading(false)
 
-      console.error("Error:", error.message);
+      console.log("Error:", error.message);
       //   console.log('RESPONSE',error.response);
       if (error.response) {
         console.log(error.response.data);
@@ -123,7 +126,43 @@ function Signup_dialog({ onpress }: Dialog_props) {
       }
     }
   };
+const Otp=()=>{
+  if(!otpvalue){
+    setotperrormessage("Please provide Otp")
+    return;
+  }
+  const headers = {
+    Accept: "application/json, text/plain, */*",
+  };
+  setisloading(true)
 
+let data = new FormData();
+data.append('email',email);
+data.append('otp', '93975');
+
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'http://64.225.58.205:8080/seller/varify_user/?email=tocybernatesolution@gmail.com&otp=93975',
+  headers:headers,
+  data : data
+};
+
+axios.request(config)
+.then((response) => {
+  setisloading(false)
+
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  setisloading(false)
+  if(!error.response.data.success){
+setotperrormessage(error.response.data.message)
+  }
+
+  console.log(error);
+});
+}
   return (
     <dialog
       className={`
@@ -562,6 +601,10 @@ onInput={() => focusNextInput(index)}
                       backgroundColor: "transparent",
                     }}
                     placeholder="Enter your Otp "
+                    value={otpvalue}
+                    onChange={(e)=>{
+                      setotpvalue(e.target.value)
+                    }}
                   />
                 </div>
                 {/* <div style={{ height: 13 }} /> */}
@@ -578,12 +621,21 @@ onInput={() => focusNextInput(index)}
                 >
                   Resend Code (0:23)
                 </span>
+                <div style={{ height: 5 }} />
+
+                <span
+                  className="text-xs font-normal leading-4 font-inter"
+                  style={{ color: "red" }}
+                >
+                  {otperrormessage}
+                </span>
 
                 <div style={{ height: 13 }} />
 
                 <div
                   className="flex gap-3 p-3 text-center border border-black rounded-full cursor-pointer"
                   onClick={() => {
+                    Otp()
                     // Add your onClick logic here
                   }}
                   style={{
