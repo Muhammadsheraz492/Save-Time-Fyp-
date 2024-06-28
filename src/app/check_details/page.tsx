@@ -11,7 +11,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import Image from 'next/image'
 import Gig_card from '@/homepage/componet/gig_card'
-export default function page() {
+export default function Page() {
     const [domLoaded, setdomLoaded] = useState(false)
     const Category_Array = ["Video & Animation", "App & Website Previews"]
     const Gig_images = ["https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/448837/original/20fd768872785df8a3a5f932f84167ad1a9f4d3e/do-keyword-research-for-your-niche-or-business.png", "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/448837/original/99a27d78676c7b0e221b9e7c326826e411b11eda/do-keyword-research-for-your-niche-or-business.jpg"]
@@ -375,6 +375,7 @@ export default function page() {
                             <div className={style.gig_images}>
                                 <div className={style.Images_preview}>
                                     {Gig_images.map((e, i) => (
+                                        <>
                                         <div
                                             onClick={() => Custom_index(i)}
                                             className={style.img_preview}>
@@ -384,6 +385,8 @@ export default function page() {
                                                 src={e}
                                             />
                                         </div>
+                                        </>
+
                                     ))
 
                                     }
